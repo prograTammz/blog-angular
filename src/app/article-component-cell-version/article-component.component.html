@@ -1,4 +1,4 @@
-<div class="container mx-auto lg:w-6/12 sm:w-10/12 font-serif">
+<div class="container mx-auto lg:w-6/12 sm:w-10/12 font-serif article">
   <h1 class="text-2xl font-bold text-blue-700 mb-4">This 3-Minute Exercise Will Change the Way You Solve Problems</h1>
   <h2 class="text-xl  text-gray-500 mb-4">‘Structured thinking’ is about building a big answer by asking many small
     questions</h2>
@@ -11,17 +11,13 @@
     </div>
   </div>
   <figure class="mb-4">
-    <img src="https://miro.medium.com/max/1400/1*mEK6L8YDCi3ET75P4rb-Yw.jpeg" alt="">
-    <figcaption class="text-gray-700 text-center text-xs mt-2">Photo: Westend61/Getty Images</figcaption>
+    <img [src]="article.heading_image" alt="">
+    <figcaption class="text-gray-700 text-center text-xs mt-2">{{article.heading_image_caption}}</figcaption>
   </figure>
 
 
-  <div class="text-justify text-lg" *ngFor="let cell of cells">
-    <p class="mb-4" *ngIf="cell.cell_type=='text'">
-      {{cell.content}}
-    </p>
 
-    <img [src]="cell.content" *ngIf="cell.cell_type=='picture'" style="width: 20em;">
-  </div>
+  <cell-component *ngFor="let cell of article.cells" [cell]="cell"></cell-component>
+
 
 </div>

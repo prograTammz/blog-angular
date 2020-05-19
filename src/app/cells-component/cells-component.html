@@ -4,3 +4,5 @@
 
 
 <img [src]="cell.content" *ngIf="cell.cell_type=='picture'" [style.width.em]="cell.metadata.width">
+<figcaption *ngIf="cell.cell_type=='picture' && cell.metadata.figure_caption!= ''"
+  class="text-gray-700 text-center text-xs mt-2">{{cell.metadata.figure_caption}}</figcaption>

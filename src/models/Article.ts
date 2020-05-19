@@ -5,4 +5,5 @@ export interface Article {
   cells: [Cell];
   title: string;
   heading_image: string;
+  heading_image_caption: string;
 }

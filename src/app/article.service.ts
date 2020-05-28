@@ -1,10 +1,13 @@
 import { Article } from "src/models/Article";
 import { Injectable } from "@angular/core";
-
+//import {Subject} from 'rxjs'
 @Injectable()
 export class ArticleService {
-  private articles: Article[] = [
+//private articlesUpdated = new Subject<Article[]>();
+
+  private articles: Article = 
     {
+      atricle_id: "sdsa",
       user_id: "00000",
       cells: [
         {
@@ -42,8 +45,19 @@ export class ArticleService {
 
         {
           cell_type: "picture",
-          metadata: { width: 20, figure_caption: "A graduating duck" },
+          metadata: { width: 50, figureCaption: "A graduating duck",figureAlt:"Graduating Duck" },
           content: ["https://img.fruugo.com/product/6/39/57499396_max.jpg"],
+
+          original_author: "00000",
+          contributors: ["00000"],
+        },
+
+        {
+          cell_type: "text",
+          metadata: {},
+          content: [
+            "This amazing duck for<script> console.log('sdsadasd')</script> instance is <b>one amazing duck</b> that worked so hard and now demands graduation, shall we not give it to her?",
+          ],
 
           original_author: "00000",
           contributors: ["00000"],
@@ -54,10 +68,11 @@ export class ArticleService {
 
       heading_image_caption: "Photo: Westend61/Getty Images",
       title: "This 3-Minute Exercise Will Change the Way You Solve Problems",
-    },
-  ];
+  }
+  ;
+
 
   getArticles() {
-    return [...this.articles];
+    return this.articles;
   }
 }

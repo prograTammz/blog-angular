@@ -1,8 +1,10 @@
 export class Metadata {
   width?: number;
-  figure_caption?: string;
+  figureCaption?: string;
+  figureAlt?: string;
   constructor() {
-    this.width = 15;
-    this.figure_caption = "";
+    this.width = 50;
+    this.figureCaption = "";
+    this.figureAlt = "";
   }
 }

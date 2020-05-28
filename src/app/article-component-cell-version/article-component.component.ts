@@ -11,6 +11,6 @@ export class ArticleCellVersionComponentComponent implements OnInit {
   constructor(public articleService: ArticleService) {}
   @Input() article: Article;
   ngOnInit(): void {
-    this.article = this.articleService.getArticles()[0];
+    this.article = this.articleService.getArticles();
   }
 }

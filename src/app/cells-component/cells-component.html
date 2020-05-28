@@ -1,8 +1,10 @@
-<p class="mb-4" *ngIf="cell.cell_type=='text'">
-  {{cell.content}}
+<p class="mb-4" *ngIf="cell.cell_type=='text'" [innerHTML]="cell.content">
+
 </p>
 
 
-<img [src]="cell.content" *ngIf="cell.cell_type=='picture'" [style.width.em]="cell.metadata.width">
-<figcaption *ngIf="cell.cell_type=='picture' && cell.metadata.figure_caption!= ''"
-  class="text-gray-700 text-center text-xs mt-2">{{cell.metadata.figure_caption}}</figcaption>
+<div class="figure-group" *ngIf="cell.cell_type=='picture'" [style.width.%]="cell.metadata.width">
+<img class="figure" [src]="cell.content" [alt]="cell.metadata.figureAlt" >
+<figcaption 
+  class="text-gray-700 text-center text-xs mt-2">{{cell.metadata.figureCaption}}</figcaption>
+</div>

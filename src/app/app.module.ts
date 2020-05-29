@@ -6,7 +6,8 @@ import { AppComponent } from "./app.component";
 import { ArticleComponentComponent } from "./article-component/article-component.component";
 import { ArticleCellVersionComponentComponent } from "./article-component-cell-version/article-component.component";
 import { ArticleCellComponentComponent } from "./cells-component/cells-component.component";
-import { ArticleService } from "./article.service";
+import { ArticleService } from "./services/article.service";
+import {FeedService} from "./services/feed.service"
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,7 @@ import { ArticleService } from "./article.service";
     ArticleCellComponentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [ArticleService],
+  providers: [ArticleService, FeedService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

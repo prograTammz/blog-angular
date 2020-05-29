@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 export class ArticleService {
 //private articlesUpdated = new Subject<Article[]>();
 
-  private articles: Article = 
+  private article: Article = 
     {
       atricle_id: "sdsa",
       user_id: "00000",
@@ -73,6 +73,6 @@ export class ArticleService {
 
 
   getArticles() {
-    return this.articles;
+    return this.article;
   }
 }
